@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/abhinay-portfolio/static/css/main.9ceb715b.css",
+    "main.js": "/abhinay-portfolio/static/js/main.a4665746.js",
+    "static/js/453.4989b1d5.chunk.js": "/abhinay-portfolio/static/js/453.4989b1d5.chunk.js",
+    "index.html": "/abhinay-portfolio/index.html",
+    "main.9ceb715b.css.map": "/abhinay-portfolio/static/css/main.9ceb715b.css.map",
+    "main.a4665746.js.map": "/abhinay-portfolio/static/js/main.a4665746.js.map",
+    "453.4989b1d5.chunk.js.map": "/abhinay-portfolio/static/js/453.4989b1d5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ceb715b.css",
+    "static/js/main.a4665746.js"
+  ]
+}
