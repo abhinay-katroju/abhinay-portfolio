@@ -34,31 +34,31 @@ export default function Portfolio() {
   const certs = [
     {
       title: 'Oracle Cloud Infrastructure GEN AI Professional',
-      image: '/certificates/oracle-cert.jpg',
+      image: `${process.env.PUBLIC_URL}/certificates/oracle-cert.jpg`,
       link: null,
       description: 'Professional certification in Oracle Cloud Infrastructure for Generative AI applications and cloud computing solutions.'
     },
     {
       title: "Deloitte Australia's Technology Job Simulation",
-      image: '/certificates/deloitte-cert.jpg',
+      image: `${process.env.PUBLIC_URL}/certificates/deloitte-cert.jpg`,
       link: null,
       description: 'Completed comprehensive technology job simulation program with Deloitte Australia, gaining hands-on experience in consulting and technology solutions.'
     },
     {
       title: 'Machine Learning Intern (Unified Mentor Pvt. Ltd)',
-      image: '/certificates/ml-intern-cert.jpg',
+      image: `${process.env.PUBLIC_URL}/certificates/ml-intern-cert.jpg`,
       link: null,
       description: 'Completed machine learning internship with hands-on project experience in AI/ML development and implementation.'
     },
     {
       title: 'Geodata Processing Using Machine Learning and Python (IIRS, ISRO)',
-      image: '/certificates/iirs-isro-cert.jpg',
+      image: `${process.env.PUBLIC_URL}/certificates/iirs-isro-cert.jpg`,
       link: null,
       description: 'Advanced course on geodata processing using ML techniques from Indian Institute of Remote Sensing, ISRO - covering satellite data analysis and geospatial AI.'
     },
     {
       title: 'Flutter Workshop',
-      image: '/certificates/flutter-cert.jpg',
+      image: `${process.env.PUBLIC_URL}/certificates/flutter-cert.jpg`,
       link: null,
       description: 'Completed comprehensive Flutter mobile app development workshop covering cross-platform mobile application development.'
     }
