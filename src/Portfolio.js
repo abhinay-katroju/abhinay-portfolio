@@ -89,7 +89,7 @@ export default function Portfolio() {
             <a href="#projects" className="nav-link">Projects</a>
             <a href="#certifications" className="nav-link">Certifications</a>
             <a href="#contact" className="nav-link">Contact</a>
-            <a href="/resume.pdf" download className="download-btn">Download Resume</a>
+            <a href={`${process.env.PUBLIC_URL}/resume.pdf`} download className="download-btn">Download Resume</a>
           </div>
         </nav>
       </header>
@@ -189,7 +189,7 @@ export default function Portfolio() {
 
             <div className="contact-buttons">
               <a href="https://github.com/abhinay-katroju?tab=repositories" target="_blank" rel="noreferrer" className="contact-btn contact-btn-outline">GitHub</a>
-              <a href="/resume.pdf" download className="contact-btn contact-btn-solid">Download Resume</a>
+              <a href={`${process.env.PUBLIC_URL}/resume.pdf`} download className="contact-btn contact-btn-solid">Download Resume</a>
             </div>
           </div>
         </section>
