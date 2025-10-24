@@ -4,65 +4,14 @@
 import React, { useState } from 'react';
 import './Portfolio.css';
 import './TextEnhancements.css';
+import siteConfig from './siteConfig';
 
 export default function Portfolio() {
-  const projects = [
-    {
-      title: 'AI Music Composition System',
-      desc: 'AI-powered music composition web app that converts natural language mood descriptions into personalized music compositions. Built with Python, Streamlit and PyTorch.',
-      link: 'https://github.com/abhinay-katroju/AI_Music_Composition'
-    },
-    {
-      title: 'Sentiment Analysis',
-      desc: 'A sentiment analysis model that classifies text into positive, negative or neutral sentiments using Python and NLP techniques.',
-      link: '#'
-    },
-    {
-      title: 'Heart Disease Prediction',
-      desc: 'Machine learning model that analyzes patient data to predict heart disease risk, enabling early intervention and improving diagnostic accuracy.',
-      link: 'https://github.com/abhinay-katroju/Detecting-Heart-Disease-with-ML'
-    },
-    {
-      title: 'Forest Type Cover Prediction',
-      desc: 'A classification model to predict forest cover type from 30x30 patch data (UCI dataset). Deployed with Python and Streamlit.',
-      link: 'https://github.com/abhinay-katroju/Forest-Cover-Type-Prediction'
-    }
-  ];
-
-  const skills = ['Python', 'Java', 'AI/ML', 'SQL', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'Keras', 'Git', 'GitHub', 'Pandas', 'NumPy', 'Matplotlib'];
-
-  const certs = [
-    {
-      title: 'Oracle Cloud Infrastructure GEN AI Professional',
-      image: `${process.env.PUBLIC_URL}/certificates/oracle-cert.jpg`,
-      link: null,
-      description: 'Professional certification in Oracle Cloud Infrastructure for Generative AI applications and cloud computing solutions.'
-    },
-    {
-      title: "Deloitte Australia's Technology Job Simulation",
-      image: `${process.env.PUBLIC_URL}/certificates/deloitte-cert.jpg`,
-      link: null,
-      description: 'Completed comprehensive technology job simulation program with Deloitte Australia, gaining hands-on experience in consulting and technology solutions.'
-    },
-    {
-      title: 'Machine Learning Intern (Unified Mentor Pvt. Ltd)',
-      image: `${process.env.PUBLIC_URL}/certificates/ml-intern-cert.jpg`,
-      link: null,
-      description: 'Completed machine learning internship with hands-on project experience in AI/ML development and implementation.'
-    },
-    {
-      title: 'Geodata Processing Using Machine Learning and Python (IIRS, ISRO)',
-      image: `${process.env.PUBLIC_URL}/certificates/iirs-isro-cert.jpg`,
-      link: null,
-      description: 'Advanced course on geodata processing using ML techniques from Indian Institute of Remote Sensing, ISRO - covering satellite data analysis and geospatial AI.'
-    },
-    {
-      title: 'Flutter Workshop',
-      image: `${process.env.PUBLIC_URL}/certificates/flutter-cert.jpg`,
-      link: null,
-      description: 'Completed comprehensive Flutter mobile app development workshop covering cross-platform mobile application development.'
-    }
-  ];
+  // Load editable content from central config to make the project reusable
+  const projects = siteConfig.projects;
+  const skills = siteConfig.skills;
+  const certs = siteConfig.certs;
+  const { name, tagline, bioShort, about, location, current, email, linkedin, github, resumeUrl, role } = siteConfig;
 
   const [selectedCert, setSelectedCert] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -82,14 +31,14 @@ export default function Portfolio() {
       <header>
         <nav>
           <div>
-            <a href="#home" className="logo">Abhinay Katroju</a>
-            <span className="tagline">Aspiring AI Developer</span>
+            <a href="#home" className="logo">{name}</a>
+            <span className="tagline">{tagline}</span>
           </div>
           <div className="nav-links">
             <a href="#projects" className="nav-link">Projects</a>
             <a href="#certifications" className="nav-link">Certifications</a>
             <a href="#contact" className="nav-link">Contact</a>
-            <a href="https://github.com/abhinay-katroju/abhinay-portfolio/raw/main/public/resume.pdf" download className="download-btn">Download Resume</a>
+            <a href={resumeUrl} download className="download-btn">Download Resume</a>
           </div>
         </nav>
       </header>
@@ -98,8 +47,8 @@ export default function Portfolio() {
         {/* Hero */}
         <section id="home" className="hero">
           <div className="hero-content">
-            <h1>Hi, I'm <span className="name-highlight">Abhinay Katroju</span></h1>
-            <p>Aspiring AI Developer — Recently completed B.Tech in Computer Science (AI) and currently working as an AI Intern at Infosys Springboard.</p>
+            <h1>Hi, I'm <span className="name-highlight">{name}</span></h1>
+            <p>{bioShort}</p>
 
             <div className="hero-buttons">
               <a href="#projects" className="btn btn-primary">View Projects</a>
@@ -107,8 +56,8 @@ export default function Portfolio() {
             </div>
 
             <div className="hero-info">
-              <p><strong>Location:</strong> Vadodara, Gujarat, India</p>
-              <p><strong>Currently:</strong> AI Intern — Infosys Springboard</p>
+              <p><strong>Location:</strong> {location}</p>
+              <p><strong>Currently:</strong> {current}</p>
             </div>
           </div>
 
@@ -116,11 +65,11 @@ export default function Portfolio() {
             {/* Profile card */}
             <div className="profile-card">
               <div className="profile-avatar">AK</div>
-              <h3>Abhinay Katroju</h3>
-              <p className="role">Aspiring AI Developer</p>
+              <h3>{name}</h3>
+              <p className="role">{role}</p>
               <div className="profile-links">
-                <a href="https://www.linkedin.com/in/abhinay-katroju-889b5a246/" target="_blank" rel="noreferrer">LinkedIn</a>
-                <a href="https://github.com/abhinay-katroju?tab=repositories" target="_blank" rel="noreferrer">GitHub</a>
+                <a href={linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href={github} target="_blank" rel="noreferrer">GitHub</a>
               </div>
             </div>
           </div>
@@ -129,7 +78,7 @@ export default function Portfolio() {
         {/* About */}
         <section id="about" className="section">
           <h2>About Me</h2>
-          <p>Hi, I'm <strong>Abhinay Katroju</strong>, an <strong>Aspiring AI Developer</strong> who recently completed B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence from Parul University, Vadodara. During my 7th semester, I completed a university-guided virtual Machine Learning internship, and I am currently working as an AI Intern at Infosys Springboard. I have hands-on experience building AI systems — including an AI-based Music Composition System — using Python and popular AI/ML libraries. I am passionate about exploring AI and continuously learning new technologies to build impactful solutions.</p>
+          <p>{about}</p>
         </section>
 
         {/* Projects */}
@@ -183,19 +132,19 @@ export default function Portfolio() {
 
           <div className="contact-content">
             <div className="contact-info">
-              <p><strong>Email:</strong> <a href="mailto:katrojuabhinay@gmail.com">katrojuabhinay@gmail.com</a></p>
-              <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abhinay-katroju-889b5a246/" target="_blank" rel="noreferrer">View Profile</a></p>
+              <p><strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a></p>
+              <p><strong>LinkedIn:</strong> <a href={linkedin} target="_blank" rel="noreferrer">View Profile</a></p>
             </div>
 
             <div className="contact-buttons">
-              <a href="https://github.com/abhinay-katroju?tab=repositories" target="_blank" rel="noreferrer" className="contact-btn contact-btn-outline">GitHub</a>
-              <a href="https://github.com/abhinay-katroju/abhinay-portfolio/raw/main/public/resume.pdf" download className="contact-btn contact-btn-solid">Download Resume</a>
+              <a href={github} target="_blank" rel="noreferrer" className="contact-btn contact-btn-outline">GitHub</a>
+              <a href={resumeUrl} download className="contact-btn contact-btn-solid">Download Resume</a>
             </div>
           </div>
         </section>
 
         <footer>
-          © {new Date().getFullYear()} Abhinay Katroju • Built with React + Custom CSS
+          © {new Date().getFullYear()} {name} • Built with React + Custom CSS
         </footer>
       </main>
 
